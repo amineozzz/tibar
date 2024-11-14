@@ -1,101 +1,80 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import { auth, currentUser } from '@clerk/nextjs/server'
+import QgisMapIframe from './components/QgisMapIframe'
+import { redirect } from 'next/navigation'
+import DynamicHeader from './components/DynamicHeader'
+import Footer from './components/Footer'
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth()
+  
+  if (!userId) {
+    redirect('/login')
+  }
+
+  const user = await currentUser()
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col min-h-screen">
+    <DynamicHeader />
+    <main className="flex-grow container mx-auto px-4 py-8">
+    <div className="space-y-8 p-8">
+      <section className="bg-white rounded-lg shadow-xl p-8 transition duration-300 ease-in-out hover:shadow-2xl">
+        <h2 className="text-3xl font-bold text-green-800 mb-4">Bienvenue sur Noire de Thibar, {user.firstName}</h2>
+        <p className="text-lg text-gray-700 mb-6">
+          Découvrez la race ovine Noire de Thibar, un trésor tunisien unique et précieux. Reconnue pour sa robustesse et sa qualité de viande exceptionnelle, cette race est au cœur de notre patrimoine agricole.
+        </p>
+        
+        <QgisMapIframe />
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="grid md:grid-cols-2 gap-8">
+        <div className="bg-green-50 rounded-lg shadow-md p-6 transition duration-300 ease-in-out hover:shadow-xl">
+          <h3 className="text-xl font-semibold text-green-700 mb-3">Caractéristiques Uniques</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>Robe entièrement noire</li>
+            <li>Adaptée aux terrains accidentés</li>
+            <li>Résistante aux maladies locales</li>
+            <li>Excellente qualité de viande</li>
+          </ul>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="bg-green-50 rounded-lg shadow-md p-6 transition duration-300 ease-in-out hover:shadow-xl">
+          <h3 className="text-xl font-semibold text-green-700 mb-3">Zones d'élevage</h3>
+          <p className="text-gray-700">
+            Les régions d'élevage de la race NT s'étendent sur neuf gouvernorats dans le nord de la Tunisie, couvrant une impressionnante superficie de 16,65% du territoire national. Cette distribution géographique témoigne de l'importance et de l'adaptabilité de cette race exceptionnelle.
+          </p>
+          <div className="mt-6">
+            <Link href="/zones-elevage" className="inline-block px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300 ease-in-out text-sm font-medium">
+              Découvrir les zones d'élevage
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white rounded-lg shadow-xl p-8 transition duration-300 ease-in-out hover:shadow-2xl">
+        <h3 className="text-2xl font-semibold text-green-800 mb-4">Navigation</h3>
+        <nav>
+          <ul className="flex flex-wrap justify-center space-x-4">
+            {[
+              { name: 'Accueil', href: '/' },
+              { name: 'Description', href: '/description' },
+              { name: "Zones d'élevage", href: '/zones-elevage' },
+              { name: 'Circuit écotouristique', href: '/circuit-eco' },
+              { name: 'Circuit valorisation viande', href: '/circuit-valorisation' },
+            ].map((item) => (
+              <li key={item.name}>
+                <Link href={item.href} className="inline-block px-4 py-2 rounded-full bg-green-600 hover:bg-green-700 text-white transition duration-300 ease-in-out text-sm font-medium">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </section>
     </div>
-  );
+    </main>
+            <Footer />
+          </div>
+  )
 }

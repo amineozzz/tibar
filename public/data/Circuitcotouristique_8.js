@@ -1,0 +1,15 @@
+var json_Circuitcotouristique_8 = {
+"type": "FeatureCollection",
+"name": "Circuitcotouristique_8",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nom": "C1 (Abattoir Mobile)", "LON": "9.462613195369013", "LAT": "36.769011416205", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.462613195369013, 36.769011416204997 ] } },
+{ "type": "Feature", "properties": { "Nom": "C2 (Lycée Agricole de Thibar)", "LON": "9.10866470884705", "LAT": "36.526301929292", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.10866470884705, 36.526301929292003 ] } },
+{ "type": "Feature", "properties": { "Nom": "C3 (Ferme Torkhani)", "LON": "9.911307295362882", "LAT": "36.6662691135568", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.911307295362882, 36.666269113556801 ] } },
+{ "type": "Feature", "properties": { "Nom": "C4 (Ferme Mestiri)", "LON": "9.46340", "LAT": "36.76780", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.4634, 36.7678 ] } },
+{ "type": "Feature", "properties": { "Nom": "C5 (Ferme belle vue)", "LON": "9.27649065303937", "LAT": "36.746919662863", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.276490653039369, 36.746919662863 ] } },
+{ "type": "Feature", "properties": { "Nom": "C6 (domaine ben ismail)", "LON": "9.509216208857941", "LAT": "36.709883173286", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.509216208857941, 36.709883173286002 ] } },
+{ "type": "Feature", "properties": { "Nom": "C7 (Chouach)", "LON": "9.542333660560699", "LAT": "36.711631548881", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.542333660560699, 36.711631548881002 ] } },
+{ "type": "Feature", "properties": { "Nom": "C8 (Jbal Zawya)", "LON": "9.51262", "LAT": "36.74175", "Nbr UF": null, "Année int": null, "Identifica": null, "Objectif r": null, "Nbr heures": null, "vente": null, "Achat des": null, "Gouvernora": null }, "geometry": { "type": "Point", "coordinates": [ 9.51262, 36.74175 ] } }
+]
+}
