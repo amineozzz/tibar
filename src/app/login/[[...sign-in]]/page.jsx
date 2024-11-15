@@ -9,7 +9,7 @@ export default function LoginPage() {
       {/* Left side - Image */}
       <div className="hidden lg:block lg:w-1/2 relative">
         <Image
-          src="https://dashboard.konnect.network/images/auth/24.webp"
+          src="/images/champs avec NT.png"
           alt="Traditional Tunisian architecture"
           fill
           className="object-cover"
