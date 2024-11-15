@@ -57,7 +57,7 @@ export default async function Home() {
           </section>
 
           <section className="bg-white rounded-lg shadow-xl p-8 transition duration-300 ease-in-out hover:shadow-2xl">
-            <h3 className="text-2xl font-semibold text-green-800 mb-4">Navigation</h3>
+            <h3 className="text-2xl font-semibold text-green-700 mb-4">Navigation</h3>
             <nav>
               <ul className="flex flex-wrap justify-center space-x-4">
                 {[
@@ -70,7 +70,7 @@ export default async function Home() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="inline-block px-4 py-2 rounded-full bg-green-600 hover:bg-green-700 text-white transition duration-300 ease-in-out text-sm font-medium"
+                      className="inline-block px-4 py-2  rounded-full bg-green-600 hover:bg-green-700 text-white transition duration-300 ease-in-out text-sm font-medium"
                     >
                       {item.name}
                     </Link>
